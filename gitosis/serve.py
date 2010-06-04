@@ -147,6 +147,12 @@ def serve(
                 path=fullpath,
                 template=resource_filename('gitosis.templates', 'other')
                 )
+        hook = os.path.join(
+                fullpath,
+                'hooks',
+                'post-receive',
+                )
+        os.chmod(hook, 0755)
         gitweb.set_descriptions(
             config=cfg,
             )
