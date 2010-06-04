@@ -337,7 +337,7 @@ def test_push_inits_subdir_parent_missing():
         )
     eq(os.listdir(repositories), ['foo'])
     foo = os.path.join(repositories, 'foo')
-    util.check_mode(foo, 0750, is_dir=True)
+    util.check_mode(foo, 0755, is_dir=True)
     eq(os.listdir(foo), ['bar.git'])
     assert os.path.isfile(os.path.join(repositories, 'foo', 'bar.git', 'HEAD'))
 

@@ -23,7 +23,7 @@ def test_init_simple():
     tmp = maketemp()
     path = os.path.join(tmp, 'repo.git')
     repository.init(path)
-    check_mode(path, 0750, is_dir=True)
+    check_mode(path, 0755, is_dir=True)
     check_bare(path)
 
 def test_init_exist_dir():
@@ -41,7 +41,7 @@ def test_init_exist_git():
     path = os.path.join(tmp, 'repo.git')
     repository.init(path)
     repository.init(path)
-    check_mode(path, 0750, is_dir=True)
+    check_mode(path, 0755, is_dir=True)
     check_bare(path)
 
 def test_init_templates():

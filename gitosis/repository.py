@@ -36,7 +36,7 @@ def init(
     if _git is None:
         _git = 'git'
 
-    util.mkdir(path, 0750)
+    util.mkdir(path, 0755)
     args = [
         _git,
         '--git-dir=.',
