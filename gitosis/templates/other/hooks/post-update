@@ -1,3 +1,4 @@
 #!/bin/sh
 set -e
+echo "Running git-update-server-info."
 git update-server-info
