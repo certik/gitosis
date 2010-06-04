@@ -8,6 +8,8 @@ import logging
 
 import sys, os, re
 
+from pkg_resources import resource_filename
+
 from gitosis import access
 from gitosis import repository
 from gitosis import gitweb
@@ -141,7 +143,10 @@ def serve(
             p = os.path.join(p, segment)
             util.mkdir(p, 0755)
 
-        repository.init(path=fullpath)
+        repository.init(
+                path=fullpath,
+                template=resource_filename('gitosis.templates', 'other')
+                )
         gitweb.set_descriptions(
             config=cfg,
             )
